@@ -59,19 +59,9 @@ th { background: #1a237e; color: white; text-align: center; font-weight: bold; }
   <button onclick="fpToggleEdit()" style="background:#1565c0;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">✏️ 編輯</button>
   <button onclick="fpSave()" style="background:#2e7d32;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">💾 儲存</button>
   <button onclick="fpDownload()" style="background:#e65100;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">⬇ 下載</button>
+  <button onclick="fpSetToken()" style="background:#6a1b9a;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">🔑 Token</button>
   <button onclick="fpReset()" style="background:#555;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">↺ 重設</button>
 </div>
-<script>
-(function(){
-const K='fp_'+location.pathname.split('/').pop();let o=document.body.innerHTML;
-function m(e){document.querySelectorAll('td,th,h1,h2,h3,h4,p,li,span,div:not(#fp-toolbar):not(#fp-toolbar *)').forEach(el=>{if(el.closest('#fp-toolbar')||el.tagName==='BUTTON'||el.tagName==='A')return;el.contentEditable=e;el.style.outline=e?'1px dashed #64b5f6':'none';});}
-window.fpToggleEdit=function(){const i=localStorage.getItem(K+'_mode')==='edit';if(i){localStorage.setItem(K+'_mode','view');m(false);document.querySelector('#fp-toolbar button:first-child').textContent='✏️ 編輯';}else{localStorage.setItem(K+'_mode','edit');m(true);document.querySelector('#fp-toolbar button:first-child').textContent='🔒 鎖定';}};
-window.fpSave=function(){localStorage.setItem(K,document.body.innerHTML);alert('✅ 已儲存！');};
-window.fpDownload=function(){const h='<!DOCTYPE html>'+document.documentElement.outerHTML;const b=new Blob([h],{type:'text/html;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=location.pathname.split('/').pop()||'index.html';a.click();URL.revokeObjectURL(a.href);};
-window.fpReset=function(){if(!confirm('確定重設為原始內容？'))return;document.body.innerHTML=o;localStorage.removeItem(K);localStorage.removeItem(K+'_mode');location.reload();};
-const s=localStorage.getItem(K);if(s){try{document.body.innerHTML=s;}catch(e){}}
-if(localStorage.getItem(K+'_mode')==='edit'){setTimeout(()=>m(true),100);const b=document.querySelector('#fp-toolbar button:first-child');if(b)b.textContent='🔒 鎖定';}
-})();
-</script>
+<script src="editor.js"></script>
 </body>
 </html>

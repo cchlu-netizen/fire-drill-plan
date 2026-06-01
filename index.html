@@ -100,39 +100,13 @@ NotebookLM 筆記本：<a href="https://notebooklm.google.com/notebook/658ece9b-
 </div>
 </div>
 
-<script>
-function editMode() {
-  document.querySelectorAll('.info-card .value, .doc-card h3, .doc-card p, .timeline-item .event, .timeline-item .date, .header h1, .header .subtitle')
-    .forEach(el => { el.contentEditable = true; el.style.outline = '2px dashed #64b5f6'; el.style.outlineOffset = '2px'; });
-  localStorage.setItem('fp_index_mode', 'edit');
-  alert('✅ 編輯模式已開啟，請直接點擊文字修改，修改後按「儲存」鈕');
-}
-function previewMode() {
-  document.querySelectorAll('[contenteditable]').forEach(el => { el.contentEditable = false; el.style.outline = 'none'; });
-  localStorage.removeItem('fp_index_mode');
-  saveChanges();
-}
-function saveChanges() {
-  const data = {};
-  document.querySelectorAll('.info-card .value, .doc-card h3, .doc-card p, .timeline-item .event, .timeline-item .date, .header h1, .header .subtitle')
-    .forEach(el => { const k = el.className + '_' + [...document.querySelectorAll(el.tagName + '.' + el.className.split(' ').join('.'))].indexOf(el); data[k] = el.innerText; });
-  localStorage.setItem('fp_index_data', JSON.stringify(data));
-  alert('✅ 變更已儲存！');
-}
-function loadSaved() {
-  const saved = localStorage.getItem('fp_index_data');
-  if (!saved) return;
-  const data = JSON.parse(saved);
-  document.querySelectorAll('.info-card .value, .doc-card h3, .doc-card p, .timeline-item .event, .timeline-item .date, .header h1, .header .subtitle')
-    .forEach(el => { const k = el.className + '_' + [...document.querySelectorAll(el.tagName + '.' + el.className.split(' ').join('.'))].indexOf(el); if (data[k]) el.innerText = data[k]; });
-  if (localStorage.getItem('fp_index_mode') === 'edit') editMode();
-}
-function clearAllStorage() {
-  for (let i = 0; i < localStorage.length; i++) { const key = localStorage.key(i); if (key.startsWith('fp_')) localStorage.removeItem(key); i--; }
-  location.reload();
-}
-window.addEventListener('beforeunload', saveChanges);
-loadSaved();
-</script>
+<div id="fp-toolbar" style="position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;gap:6px;background:#1a237e;padding:8px 14px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,0.5);font-family:'Microsoft JhengHei',Arial,sans-serif;">
+  <button onclick="fpToggleEdit()" style="background:#1565c0;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">✏️ 編輯</button>
+  <button onclick="fpSave()" style="background:#2e7d32;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">💾 儲存</button>
+  <button onclick="fpDownload()" style="background:#e65100;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">⬇ 下載</button>
+  <button onclick="fpSetToken()" style="background:#6a1b9a;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">🔑 Token</button>
+  <button onclick="fpReset()" style="background:#555;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">↺ 重設</button>
+</div>
+<script src="editor.js"></script>
 </body>
 </html>
