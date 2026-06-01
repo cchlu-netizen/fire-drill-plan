@@ -1,9 +1,34 @@
 (function() {
   var K = 'fp_' + location.pathname.split('/').pop();
-  var TK = 'fp_github_token';
-  var REPO = 'cchlu-netizen/fire-drill-plan';
-  var FS = (function(){var k=[102,105,114,101,100,114,105,108,108];var t=[1,1,29,58,9,39,62,13,27,3,92,59,93,16,64,36,61,62,36,15,23,8,60,48,36,39,1,95,59,70,39,23,75,37,92,15,4,48,65,1];var r='';for(var i=0;i<t.length;i++){r+=String.fromCharCode(t[i]^k[i%k.length]);}return r;})();
   var orig = document.body.innerHTML;
+
+  firebase.initializeApp({
+    apiKey: "AIzaSyANWORL9XLaoW9ncUj_Go44oiDJyEJJcqs",
+    authDomain: "fire-drill-pingzhen.firebaseapp.com",
+    databaseURL: "https://fire-drill-pingzhen-default-rtdb.firebaseio.com",
+    projectId: "fire-drill-pingzhen",
+    storageBucket: "fire-drill-pingzhen.firebasestorage.app",
+    messagingSenderId: "488420822527",
+    appId: "1:488420822527:web:a9a0fde305fc670932ebca",
+    measurementId: "G-SFQ6P2WFZD"
+  });
+
+  function fn() {
+    return decodeURIComponent(location.pathname).split('/').pop() || 'index.html';
+  }
+
+  var dbRef = firebase.database().ref('contents/' + fn());
+  var skipNext = false;
+
+  dbRef.on('value', function(snap) {
+    var val = snap.val();
+    if (!val) return;
+    if (skipNext) { skipNext = false; return; }
+    localStorage.setItem(K, val);
+    var cur = document.querySelector('#fp-toolbar button:nth-child(2)');
+    if (cur) cur.textContent = '💾 儲存';
+    try { document.body.innerHTML = val; } catch(e) {}
+  });
 
   function ed(on) {
     document.querySelectorAll('td,th,h1,h2,h3,h4,p,li,span,div:not(#fp-toolbar):not(#fp-toolbar *)')
@@ -12,32 +37,6 @@
         el.contentEditable = on;
         el.style.outline = on ? '1px dashed #64b5f6' : 'none';
       });
-  }
-
-  function fullHtml() {
-    return '<!DOCTYPE html>' + document.documentElement.outerHTML;
-  }
-
-  function fn() {
-    return decodeURIComponent(location.pathname).split('/').pop() || 'index.html';
-  }
-
-  function b64(str) {
-    return btoa(unescape(encodeURIComponent(str)));
-  }
-
-  async function sync(token) {
-    var filename = fn();
-    var url = 'https://api.github.com/repos/' + REPO + '/contents/' + encodeURIComponent(filename);
-    var get = await fetch(url, { headers: { Authorization: 'Bearer ' + token } });
-    if (!get.ok) throw new Error('讀取檔案資訊失敗 (HTTP ' + get.status + ')');
-    var info = await get.json();
-    var put = await fetch(url, {
-      method: 'PUT',
-      headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: '✏️ 更新 ' + filename, content: b64(fullHtml()), sha: info.sha })
-    });
-    if (!put.ok) throw new Error('寫入失敗 (HTTP ' + put.status + ')');
   }
 
   window.fpToggleEdit = function() {
@@ -52,31 +51,31 @@
   };
 
   window.fpSave = function() {
-    localStorage.setItem(K, document.body.innerHTML);
-    var token = localStorage.getItem(TK) || FS;
+    var html = document.body.innerHTML;
+    localStorage.setItem(K, html);
+    skipNext = true;
     var btn = document.querySelector('#fp-toolbar button:nth-child(2)');
     if (btn) btn.textContent = '⏳ 同步中…';
-    sync(token).then(function() {
-      alert('✅ 已儲存並同步至 GitHub！\n重新整理即可看到最新內容。');
+    dbRef.set(html).then(function() {
+      alert('✅ 已儲存！所有人重新整理後會看到最新內容。');
       if (btn) btn.textContent = '💾 儲存';
     }).catch(function(e) {
-      localStorage.removeItem(TK);
-      alert('⚠️ 同步至 GitHub 失敗：' + e.message + '\n\n已儲存至本機，但其他電腦看不到。\n請告知管理員更新 Token。');
+      alert('⚠️ 儲存失敗：' + e.message);
       if (btn) btn.textContent = '💾 儲存';
     });
   };
 
   window.fpDownload = function() {
-    var b = new Blob([fullHtml()], { type: 'text/html;charset=utf-8' });
+    var b = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
     var a = document.createElement('a');
     a.href = URL.createObjectURL(b); a.download = fn(); a.click();
     URL.revokeObjectURL(a.href);
   };
 
   window.fpSetToken = function() {
-    var cur = localStorage.getItem(TK) || '';
-    var t = prompt('請輸入 GitHub Personal Access Token：\n（需有 fire-drill-plan 倉儲 Contents 讀寫權限）', cur);
-    if (t) { localStorage.setItem(TK, t); alert('✅ Token 已儲存！'); }
+    if (!confirm('從 Firebase 重新載入伺服器內容？（本機未儲存之編輯會遺失）')) return;
+    localStorage.removeItem(K);
+    location.reload();
   };
 
   window.fpClearAll = function() {
