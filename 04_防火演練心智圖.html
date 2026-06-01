@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>防火演練心智圖 - 大全聯平鎮分公司</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #f0f4c3; font-family: 'Microsoft JhengHei', Arial, sans-serif; display: flex; justify-content: center; padding: 20px; min-height: 100vh; }
+.map { position: relative; width: 1100px; min-height: 1350px; }
+.center-node { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); background: #1a237e; color: white; padding: 18px 30px; border-radius: 50px; font-size: 17pt; font-weight: bold; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 10; }
+.branch { position: absolute; }
+.b1 { top: 150px; left: 10px; } .b2 { top: 150px; right: 10px; }
+.b3 { top: 380px; left: 10px; } .b4 { top: 380px; right: 10px; }
+.b5 { top: 610px; left: 10px; } .b6 { top: 610px; right: 10px; }
+.b7 { top: 840px; left: 50%; transform: translateX(-50%); }
+.b8 { top: 1080px; left: 50%; transform: translateX(-50%); }
+.node { background: white; border-radius: 12px; padding: 12px 16px; margin: 6px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.12); border-left: 5px solid; width: 290px; }
+.node h4 { font-size: 11pt; margin-bottom: 3px; }
+.node p, .node li { font-size: 9pt; color: #555; line-height: 1.35; }
+.node ul { padding-left: 15px; }
+.c1 { border-color: #d32f2f; } .c2 { border-color: #1976d2; }
+.c3 { border-color: #388e3c; } .c4 { border-color: #f57c00; }
+.c5 { border-color: #7b1fa2; } .c6 { border-color: #00838f; }
+.c7 { border-color: #c62828; } .c8 { border-color: #2e7d32; }
+</style>
+</head>
+<body>
+<div class="map">
+<div class="center-node">防火演練計畫<br><span style="font-size:11pt;">大全聯平鎮分公司 | 場所編號80033587</span></div>
+
+<div class="branch b1">
+<div class="node c1"><h4>場所基本資料</h4><p>南東路57-1號 03-4399888<br>地上3層/地下1層 | 甲種量販店<br>管理權人徐文偉 | 防火管理人呂忠誠</p></div>
+</div>
+
+<div class="branch b2">
+<div class="node c2"><h4>法規依據</h4><p>消防法第13條+施行細則第15條<br>50人以上須編5班·每半年≥4小時<br>前7日通報·後15日備查</p></div>
+</div>
+
+<div class="branch b3">
+<div class="node c3"><h4>指揮層級</h4><p>隊長徐文偉·副隊長呂忠誠<br>指揮班班長邱美娜<br>成員黃祥瑀、張淑華</p></div>
+</div>
+
+<div class="branch b4">
+<div class="node c4"><h4>5全區專責班</h4><p>通報班張兆筌·滅火班葉春煌<br>避難引導班徐志銘/吳郁峰<br>安全防護班李建民·救護班詹淳翔</p></div>
+</div>
+
+<div class="branch b5">
+<div class="node c5"><h4>3地區隊</h4><p>1F隊長盧煙伶·2F隊長邱美娜<br>B1+3~4F隊長林艾雨/張圓旻<br>夜間編組：趙國棟/黃祥瑀/邢鈺正</p></div>
+</div>
+
+<div class="branch b6">
+<div class="node c6"><h4>4小時課程</h4><p>14:00簽到→消防教學→<br>狀況演練(A區菸酒+倉庫)→<br>分組操作→綜合盲測→檢討</p></div>
+</div>
+
+<div class="branch b7">
+<div class="node c7"><h4>績效目標</h4><p>疏散≤8分·集合≤5分·到場≤2分·報案≤1分<br>參加46人·前次訓練114/12/1</p></div>
+</div>
+
+<div class="branch b8">
+<div class="node c8"><h4>時程</h4><p>6/1計畫→6/3前通報消防局→6/10演練→6/25前送成果</p></div>
+</div>
+</div>
+<div id="fp-toolbar" style="position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;gap:6px;background:#1a237e;padding:8px 14px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,0.5);font-family:'Microsoft JhengHei',Arial,sans-serif;">
+  <button onclick="fpToggleEdit()" style="background:#1565c0;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">✏️ 編輯</button>
+  <button onclick="fpSave()" style="background:#2e7d32;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">💾 儲存</button>
+  <button onclick="fpDownload()" style="background:#e65100;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">⬇ 下載</button>
+  <button onclick="fpReset()" style="background:#555;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">↺ 重設</button>
+</div>
+<script>
+(function(){
+const K='fp_'+location.pathname.split('/').pop();let o=document.body.innerHTML;
+function m(e){document.querySelectorAll('td,th,h1,h2,h3,h4,p,li,span,div:not(#fp-toolbar):not(#fp-toolbar *)').forEach(el=>{if(el.closest('#fp-toolbar')||el.tagName==='BUTTON'||el.tagName==='A')return;el.contentEditable=e;el.style.outline=e?'1px dashed #64b5f6':'none';});}
+window.fpToggleEdit=function(){const i=localStorage.getItem(K+'_mode')==='edit';if(i){localStorage.setItem(K+'_mode','view');m(false);document.querySelector('#fp-toolbar button:first-child').textContent='✏️ 編輯';}else{localStorage.setItem(K+'_mode','edit');m(true);document.querySelector('#fp-toolbar button:first-child').textContent='🔒 鎖定';}};
+window.fpSave=function(){localStorage.setItem(K,document.body.innerHTML);alert('✅ 已儲存！');};
+window.fpDownload=function(){const h='<!DOCTYPE html>'+document.documentElement.outerHTML;const b=new Blob([h],{type:'text/html;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=location.pathname.split('/').pop()||'index.html';a.click();URL.revokeObjectURL(a.href);};
+window.fpReset=function(){if(!confirm('確定重設為原始內容？'))return;document.body.innerHTML=o;localStorage.removeItem(K);localStorage.removeItem(K+'_mode');location.reload();};
+const s=localStorage.getItem(K);if(s){try{document.body.innerHTML=s;}catch(e){}}
+if(localStorage.getItem(K+'_mode')==='edit'){setTimeout(()=>m(true),100);const b=document.querySelector('#fp-toolbar button:first-child');if(b)b.textContent='🔒 鎖定';}
+})();
+</script>
+</body>
+</html>

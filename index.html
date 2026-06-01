@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大全聯平鎮分公司 · 消防演練計畫總覽</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Microsoft JhengHei', Arial, sans-serif; background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); min-height: 100vh; color: #e0e0e0; padding: 40px 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+.header { text-align: center; margin-bottom: 40px; }
+.header h1 { font-size: 28pt; color: #fff; letter-spacing: 2px; }
+.header h1 span { color: #64b5f6; }
+.header .subtitle { font-size: 13pt; color: #90a4ae; margin-top: 8px; }
+.header .badge { display: inline-block; background: #c62828; color: #fff; padding: 4px 16px; border-radius: 20px; font-size: 10pt; margin-top: 10px; }
+.info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 35px; }
+.info-card { background: rgba(255,255,255,0.06); border-radius: 10px; padding: 14px 18px; border: 1px solid rgba(255,255,255,0.08); }
+.info-card .label { font-size: 9pt; color: #78909c; }
+.info-card .value { font-size: 11pt; color: #e0e0e0; margin-top: 3px; font-weight: bold; }
+.doc-grid { display: grid; gap: 14px; }
+.doc-card { background: rgba(255,255,255,0.07); border-radius: 12px; padding: 20px 24px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.2s; display: flex; align-items: center; justify-content: space-between; }
+.doc-card:hover { background: rgba(255,255,255,0.12); border-color: #64b5f6; transform: translateY(-2px); }
+.doc-card .info { flex: 1; }
+.doc-card .num { display: inline-block; background: #1a237e; color: #fff; border-radius: 50%; width: 32px; height: 32px; text-align: center; line-height: 32px; font-size: 12pt; font-weight: bold; margin-right: 15px; float: left; }
+.doc-card h3 { font-size: 13pt; color: #fff; }
+.doc-card p { font-size: 10pt; color: #90a4ae; margin-top: 4px; }
+.doc-card .open-btn { background: #1565c0; color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-size: 11pt; cursor: pointer; text-decoration: none; font-family: inherit; transition: background 0.2s; white-space: nowrap; }
+.doc-card .open-btn:hover { background: #1976d2; }
+.timeline { margin-top: 35px; background: rgba(255,255,255,0.05); border-radius: 12px; padding: 24px; border: 1px solid rgba(255,255,255,0.08); }
+.timeline h2 { font-size: 14pt; color: #64b5f6; margin-bottom: 15px; }
+.timeline-item { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.timeline-item:last-child { border: none; }
+.timeline-item .dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 12px; flex-shrink: 0; }
+.timeline-item .date { font-size: 10pt; color: #90a4ae; width: 80px; flex-shrink: 0; }
+.timeline-item .event { font-size: 11pt; color: #e0e0e0; }
+.footer { text-align: center; margin-top: 40px; font-size: 9pt; color: #546e7a; }
+.toolbar-btn { background: none; border: 1px solid #555; color: #aaa; padding: 4px 12px; border-radius: 6px; cursor: pointer; font-size: 9pt; }
+.toolbar-btn:hover { border-color: #888; color: #fff; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1><span>防火演練</span> 計畫總覽</h1>
+<div class="subtitle">大全聯流通事業股份有限公司平鎮分公司 · 場所編號 80033587</div>
+<div class="badge">115年6月10日 14:00~18:00</div>
+<div id="toolbar" style="margin-top:12px;">
+<button class="toolbar-btn" onclick="editMode()">✏️ 編輯所有文件</button>
+<button class="toolbar-btn" onclick="previewMode()">👁️ 檢視模式</button>
+<button class="toolbar-btn" onclick="clearAllStorage()">🗑️ 清除暫存</button>
+</div>
+</div>
+
+<div class="info-cards">
+<div class="info-card"><div class="label">地址</div><div class="value">桃園市平鎮區南東路57-1號</div></div>
+<div class="info-card"><div class="label">電話</div><div class="value">03-4399888</div></div>
+<div class="info-card"><div class="label">樓層</div><div class="value">地上3層 / 地下1層</div></div>
+<div class="info-card"><div class="label">管理權人 / 防火管理人</div><div class="value">徐文偉 / 呂忠誠</div></div>
+<div class="info-card"><div class="label">參加人數</div><div class="value">46人</div></div>
+<div class="info-card"><div class="label">前次訓練</div><div class="value">114年12月1日</div></div>
+</div>
+
+<div class="doc-grid">
+<div class="doc-card">
+<div class="info"><span class="num">1</span><h3>訓練計畫提報表</h3><p>前7日通報消防機關用 · 6/3前送平鎮分隊</p></div>
+<a class="open-btn" href="01_訓練計畫提報表.html" target="_blank">開啟 →</a>
+</div>
+<div class="doc-card">
+<div class="info"><span class="num">2</span><h3>訓練課程表</h3><p>4小時完整時程 · 含績效目標</p></div>
+<a class="open-btn" href="02_訓練課程表.html" target="_blank">開啟 →</a>
+</div>
+<div class="doc-card">
+<div class="info"><span class="num">3</span><h3>自衛消防編組名冊</h3><p>46人完整名冊 · 含簽名欄</p></div>
+<a class="open-btn" href="03_自衛消防編組名冊.html" target="_blank">開啟 →</a>
+</div>
+<div class="doc-card">
+<div class="info"><span class="num">4</span><h3>防火演練心智圖</h3><p>視覺化總覽</p></div>
+<a class="open-btn" href="04_防火演練心智圖.html" target="_blank">開啟 →</a>
+</div>
+<div class="doc-card">
+<div class="info"><span class="num">5</span><h3>防火演練簡報</h3><p>8頁投影簡報</p></div>
+<a class="open-btn" href="05_防火演練簡報.html" target="_blank">開啟 →</a>
+</div>
+<div class="doc-card">
+<div class="info"><span class="num">6</span><h3>學習卡</h3><p>Q&A 10題 · 員工複習用</p></div>
+<a class="open-btn" href="06_學習卡.html" target="_blank">開啟 →</a>
+</div>
+</div>
+
+<div class="timeline">
+<h2>📅 關鍵時程</h2>
+<div class="timeline-item"><span class="dot" style="background:#1565c0;"></span><span class="date">6/1 (一)</span><span class="event">計畫擬定完成</span></div>
+<div class="timeline-item"><span class="dot" style="background:#e65100;"></span><span class="date">6/3 (三)</span><span class="event"><strong>提報表送消防局平鎮分隊（截止）</strong></span></div>
+<div class="timeline-item"><span class="dot" style="background:#c62828;"></span><span class="date">6/10 (三)</span><span class="event"><strong>演練日 14:00~18:00</strong></span></div>
+<div class="timeline-item"><span class="dot" style="background:#2e7d32;"></span><span class="date">6/25 (四)</span><span class="event">成果文件送備查（截止）</span></div>
+</div>
+
+<div class="footer">
+NotebookLM 筆記本：<a href="https://notebooklm.google.com/notebook/658ece9b-d6dd-47bc-ba4a-18133410f174" target="_blank" style="color:#64b5f6;">消防演練計劃</a>
+</div>
+</div>
+
+<script>
+function editMode() {
+  document.querySelectorAll('.info-card .value, .doc-card h3, .doc-card p, .timeline-item .event, .timeline-item .date, .header h1, .header .subtitle')
+    .forEach(el => { el.contentEditable = true; el.style.outline = '2px dashed #64b5f6'; el.style.outlineOffset = '2px'; });
+  localStorage.setItem('fp_index_mode', 'edit');
+  alert('✅ 編輯模式已開啟，請直接點擊文字修改，修改後按「儲存」鈕');
+}
+function previewMode() {
+  document.querySelectorAll('[contenteditable]').forEach(el => { el.contentEditable = false; el.style.outline = 'none'; });
+  localStorage.removeItem('fp_index_mode');
+  saveChanges();
+}
+function saveChanges() {
+  const data = {};
+  document.querySelectorAll('.info-card .value, .doc-card h3, .doc-card p, .timeline-item .event, .timeline-item .date, .header h1, .header .subtitle')
+    .forEach(el => { const k = el.className + '_' + [...document.querySelectorAll(el.tagName + '.' + el.className.split(' ').join('.'))].indexOf(el); data[k] = el.innerText; });
+  localStorage.setItem('fp_index_data', JSON.stringify(data));
+  alert('✅ 變更已儲存！');
+}
+function loadSaved() {
+  const saved = localStorage.getItem('fp_index_data');
+  if (!saved) return;
+  const data = JSON.parse(saved);
+  document.querySelectorAll('.info-card .value, .doc-card h3, .doc-card p, .timeline-item .event, .timeline-item .date, .header h1, .header .subtitle')
+    .forEach(el => { const k = el.className + '_' + [...document.querySelectorAll(el.tagName + '.' + el.className.split(' ').join('.'))].indexOf(el); if (data[k]) el.innerText = data[k]; });
+  if (localStorage.getItem('fp_index_mode') === 'edit') editMode();
+}
+function clearAllStorage() {
+  for (let i = 0; i < localStorage.length; i++) { const key = localStorage.key(i); if (key.startsWith('fp_')) localStorage.removeItem(key); i--; }
+  location.reload();
+}
+window.addEventListener('beforeunload', saveChanges);
+loadSaved();
+</script>
+</body>
+</html>
