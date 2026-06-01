@@ -1,0 +1,66 @@
+- generic [ref=e1]:
+  - generic [ref=e5]:
+    - button "Google 應用程式" [ref=e9] [cursor=pointer]:
+      - img [ref=e10]
+    - button "Google 帳戶： LU CHUNG-CHENG呂忠誠 (cchlu@pxmart.com.tw)" [ref=e15] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e24]:
+      - link "NotebookLM 首頁" [ref=e26] [cursor=pointer]:
+        - /url: /
+        - img "NotebookLM 標誌" [ref=e28]
+      - generic [ref=e30]: Loading Notebook...
+      - generic [ref=e31]:
+        - button "建立筆記本" [ref=e33]:
+          - img [ref=e34]: add
+          - generic [ref=e35]: 建立筆記本
+        - generic "設定" [ref=e40]:
+          - button "設定" [ref=e42]:
+            - img [ref=e43]: settings
+            - generic [ref=e45]: 設定
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - navigation [ref=e51]:
+            - heading "來源" [level=2] [ref=e52]:
+              - generic [ref=e53]: 來源
+          - button "收合來源面板" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]: dock_to_right
+        - generic [ref=e64]:
+          - img [ref=e65]: docs
+          - generic [ref=e66]: 已儲存的來源會顯示在這裡
+          - generic [ref=e67]: 點選上方的「新增來源」即可新增 PDF、網站、文字、影片或音訊檔案。你也可以直接從 Google 雲端硬碟匯入檔案。
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - heading "對話" [level=2] [ref=e72]
+          - button "對話選項" [ref=e74] [cursor=pointer]:
+            - img [ref=e75]: more_vert
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - progressbar [ref=e82]:
+              - img [ref=e84]
+              - generic [ref=e87]:
+                - img [ref=e89]
+                - img [ref=e92]
+                - img [ref=e95]
+            - generic [ref=e98]:
+              - img [ref=e99]: landscape_2
+              - generic [ref=e100]: 📔
+              - generic [ref=e101]:
+                - heading "Loading Notebook..." [level=2] [ref=e102]
+                - generic [ref=e103]:
+                  - generic [ref=e104]: 0 個來源
+                  - generic [ref=e105]: ·
+                  - generic "null"
+          - generic [ref=e114]:
+            - textbox "查詢方塊" [active] [ref=e116]:
+              - /placeholder: 提問或創作內容
+            - generic [ref=e117]:
+              - generic [ref=e119]: 0 個來源
+              - button "提交" [disabled]:
+                - img: arrow_forward
+      - generic [ref=e121]:
+        - navigation
+        - button "展開「工作室」面板" [ref=e122] [cursor=pointer]:
+          - img [ref=e123]: dock_to_left
+    - contentinfo [ref=e129]: NotebookLM 提供的資訊未必正確，請查證回覆內容。

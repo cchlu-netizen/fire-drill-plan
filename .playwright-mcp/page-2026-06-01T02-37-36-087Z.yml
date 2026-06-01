@@ -1,0 +1,557 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e5]:
+    - button "Google 應用程式" [ref=e9] [cursor=pointer]:
+      - img [ref=e10]
+    - button "Google 帳戶： LU CHUNG-CHENG呂忠誠 (cchlu@pxmart.com.tw)" [ref=e15] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e24]:
+      - link "NotebookLM 首頁" [ref=e26] [cursor=pointer]:
+        - /url: /
+        - img "NotebookLM 標誌" [ref=e28]
+      - textbox [ref=e133]: 消防演練計劃
+      - generic [ref=e31]:
+        - button "建立筆記本" [ref=e33]:
+          - img [ref=e34]: add
+          - generic [ref=e35]: 建立筆記本
+        - generic [ref=e134]:
+          - button "數據分析" [ref=e137]:
+            - img [ref=e138]: trending_up
+            - generic [ref=e140]: 數據分析
+          - generic "共用筆記本" [ref=e145]:
+            - button "共用筆記本" [ref=e147]:
+              - img [ref=e148]: share
+              - generic [ref=e150]: 共用
+        - generic "設定" [ref=e40]:
+          - button "設定" [ref=e42]:
+            - img [ref=e43]: settings
+            - generic [ref=e45]: 設定
+        - generic [ref=e155]: PRO
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - navigation [ref=e51]:
+            - heading "來源" [level=2] [ref=e52]:
+              - generic [ref=e53]: 來源
+          - button "收合來源面板" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]: dock_to_right
+        - generic [ref=e61]:
+          - generic [ref=e156]:
+            - button "新增來源" [ref=e158]:
+              - img [ref=e159]: add
+              - generic [ref=e160]: 新增來源
+            - generic [ref=e166]:
+              - textbox "根據輸入的查詢內容，探索來源" [ref=e172]:
+                - /placeholder: 在網路上搜尋新來源
+              - generic [ref=e173]:
+                - generic [ref=e174]:
+                  - button "網路" [ref=e177]:
+                    - generic [ref=e179]:
+                      - generic [ref=e180]:
+                        - img [ref=e181]: language
+                        - generic [ref=e182]: 網路
+                      - img [ref=e183]: keyboard_arrow_down
+                  - button "Fast Research" [ref=e188]:
+                    - generic [ref=e190]:
+                      - generic [ref=e191]:
+                        - img [ref=e192]: search_spark
+                        - generic [ref=e193]: Fast Research
+                      - img [ref=e194]: keyboard_arrow_down
+                - generic [ref=e197]:
+                  - button "提交" [disabled]:
+                    - img: search
+            - generic [ref=e198]:
+              - button "依主題自動加上來源標籤" [ref=e201] [cursor=pointer]:
+                - img [ref=e202]: label_auto
+              - generic [ref=e205]:
+                - generic [ref=e206]: 全選
+                - generic [ref=e210] [cursor=pointer]:
+                  - checkbox "選取所有來源" [checked] [ref=e211]
+                  - generic:
+                    - img
+          - generic [ref=e63]:
+            - generic [ref=e212] [cursor=pointer]:
+              - button "115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e213]
+              - img [ref=e217]: drive_pdf
+              - generic:
+                - generic:
+                  - generic: 115.4.18--防護計劃書(防火管理人更換).pdf
+              - button "更多" [ref=e219]
+              - generic [ref=e225]:
+                - checkbox "115.4.18--防護計劃書(防火管理人更換).pdf" [checked] [ref=e226]
+                - generic:
+                  - img
+            - generic [ref=e227] [cursor=pointer]:
+              - button "大全聯平鎮分公司防護計劃書.pdf" [ref=e228]
+              - img [ref=e232]: drive_pdf
+              - generic:
+                - generic:
+                  - generic: 大全聯平鎮分公司防護計劃書.pdf
+              - button "更多" [ref=e234]
+              - generic [ref=e240]:
+                - checkbox "大全聯平鎮分公司防護計劃書.pdf" [checked] [ref=e241]
+                - generic:
+                  - img
+            - generic [ref=e242] [cursor=pointer]:
+              - button "自衛消防編組訓練計畫提報表.pdf" [ref=e243]
+              - img [ref=e247]: drive_pdf
+              - generic:
+                - generic:
+                  - generic: 自衛消防編組訓練計畫提報表.pdf
+              - button "更多" [ref=e249]
+              - generic [ref=e255]:
+                - checkbox "自衛消防編組訓練計畫提報表.pdf" [checked] [ref=e256]
+                - generic:
+                  - img
+            - generic [ref=e257] [cursor=pointer]:
+              - button "防火演練計畫.docx" [ref=e258]
+              - img [ref=e262]: article
+              - generic:
+                - generic:
+                  - generic: 防火演練計畫.docx
+              - button "更多" [ref=e264]
+              - generic [ref=e270]:
+                - checkbox "防火演練計畫.docx" [checked] [ref=e271]
+                - generic:
+                  - img
+            - generic [ref=e272] [cursor=pointer]:
+              - button "防火管理人提報表.pdf" [ref=e273]
+              - img [ref=e277]: drive_pdf
+              - generic:
+                - generic:
+                  - generic: 防火管理人提報表.pdf
+              - button "更多" [ref=e279]
+              - generic [ref=e285]:
+                - checkbox "防火管理人提報表.pdf" [checked] [ref=e286]
+                - generic:
+                  - img
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - heading "對話" [level=2] [ref=e72]
+          - generic [ref=e73]:
+            - button "設定筆記本" [ref=e287] [cursor=pointer]:
+              - img [ref=e288]: tune
+            - button "對話選項" [ref=e74] [cursor=pointer]:
+              - img [ref=e75]: more_vert
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - generic [ref=e98]:
+              - img [ref=e99]: landscape_2
+              - generic [ref=e100] [cursor=pointer]: 🔥
+              - button "自訂筆記本" [ref=e291]:
+                - img [ref=e292]: photo_spark
+                - generic [ref=e293]: 自訂
+              - generic [ref=e101]:
+                - heading "消防演練計劃" [level=2] [ref=e296]
+                - generic [ref=e103]:
+                  - generic [ref=e104]: 5 個來源
+                  - generic [ref=e105]: ·
+                  - generic "Mon Jun 01 2026 09:01:25 GMT+0800 (GMT+08:00)" [ref=e297]: 2026年6月1日
+            - generic [ref=e298]:
+              - paragraph [ref=e478]:
+                - text: 這份文件是
+                - strong [ref=e479]: 大全聯流通事業股份有限公司平鎮分公司
+                - text: 所制定的
+                - strong [ref=e480]: 大規模場所消防防護計畫
+                - text: ，旨在落實火災預防並保障人員安全。內容詳細記載了由
+                - strong [ref=e481]: 管理權人
+                - text: 與
+                - strong [ref=e482]: 防火管理人
+                - text: 負責的各項業務，並建立了包含
+                - strong [ref=e483]: 滅火、通報及避難引導
+                - text: 等任務的
+                - strong [ref=e484]: 自衛消防編組
+                - text: 。計畫中涵蓋了
+                - strong [ref=e485]: 平時檢查機制
+                - text: 、
+                - strong [ref=e486]: 地震與瓦斯災害
+                - text: 的應變措施，以及針對
+                - strong [ref=e487]: 施工期間
+                - text: 的特殊安全對策。此外，文中也明確規劃了員工應接受的
+                - strong [ref=e488]: 防災教育訓練
+                - text: 頻率，並附上詳盡的
+                - strong [ref=e489]: 場所位置圖
+                - text: 與
+                - strong [ref=e490]: 逃生避難路線圖
+                - text: 。這項計畫透過系統化的組織管理與定期演練，確保該場所在面對緊急狀況時能迅速應對並減輕災害損失。
+              - generic [ref=e491]:
+                - button "儲存至記事" [ref=e492]:
+                  - img [ref=e493]: keep
+                  - generic [ref=e494]: 儲存至記事
+                - button "複製摘要" [ref=e497] [cursor=pointer]:
+                  - img [ref=e498]: copy_all
+                - button "摘要品質良好" [ref=e501] [cursor=pointer]:
+                  - img [ref=e502]: thumb_up
+                - button "摘要有待加強" [ref=e505] [cursor=pointer]:
+                  - img [ref=e506]: thumb_down
+              - generic [ref=e511]:
+                - button "如何編組自衛消防隊？":
+                  - generic: 如何編組自衛消防隊？
+                - button "施工時的消防防護措施有哪些？":
+                  - generic: 施工時的消防防護措施有哪些？
+                - button "發生地震時應如何應變？":
+                  - generic: 發生地震時應如何應變？
+            - generic [ref=e518]: 今天 • 上午10:36
+            - generic [ref=e519]:
+              - heading "請詳細列出所有來源文件的完整內容要點，包含場所基本資料、樓層面積、編組班表、訓練課程、相關日期與人員" [level=3] [ref=e525]:
+                - paragraph [ref=e526]: 請詳細列出所有來源文件的完整內容要點，包含場所基本資料、樓層面積、編組班表、訓練課程、相關日期與人員
+              - generic [ref=e529]:
+                - generic [ref=e565]:
+                  - generic [ref=e568]: 以下為您綜合所有來源文件，整理出大全聯平鎮店（大潤發平鎮店）的消防防護與演練計畫之完整內容要點：
+                  - heading "一、 場所基本資料" [level=3] [ref=e571]
+                  - list [ref=e572]:
+                    - listitem [ref=e575]:
+                      - text: 場所名稱：大全聯流通事業股份有限公司平鎮分公司（通稱大全聯平鎮店或大潤發平鎮店），場所編號：80033587
+                      - 'button "1: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e577] [cursor=pointer]':
+                        - 'generic "1: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e578]': "1"
+                      - button [ref=e580] [cursor=pointer]:
+                        - img [ref=e581]: more_horiz
+                      - text: 。
+                    - listitem [ref=e584]:
+                      - text: 地址：桃園市平鎮區南東路 57-1 號（部分表單簡寫為 57 號）
+                      - 'button "1: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e586] [cursor=pointer]':
+                        - 'generic "1: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e587]': "1"
+                      - button [ref=e589] [cursor=pointer]:
+                        - img [ref=e590]: more_horiz
+                      - text: 。
+                    - listitem [ref=e593]:
+                      - text: 連絡電話：03-4399888
+                      - 'button "1: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e595] [cursor=pointer]':
+                        - 'generic "1: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e596]': "1"
+                      - 'button "2: 大全聯平鎮分公司防護計劃書.pdf" [ref=e598] [cursor=pointer]':
+                        - 'generic "2: 大全聯平鎮分公司防護計劃書.pdf" [ref=e599]': "2"
+                      - text: 。
+                    - listitem [ref=e602]:
+                      - text: 場所類別：依消防法規定屬甲類（甲種）場所，為大型量販店及批發倉庫
+                      - 'button "3: 防火演練計畫.docx" [ref=e604] [cursor=pointer]':
+                        - 'generic "3: 防火演練計畫.docx" [ref=e605]': "3"
+                      - button [ref=e607] [cursor=pointer]:
+                        - img [ref=e608]: more_horiz
+                      - text: 。
+                    - listitem [ref=e611]:
+                      - text: 建築物樓層：建築體涵蓋地上 3 層及地下 1 層
+                      - 'button "3: 防火演練計畫.docx" [ref=e613] [cursor=pointer]':
+                        - 'generic "3: 防火演練計畫.docx" [ref=e614]': "3"
+                      - 'button "6: 大全聯平鎮分公司防護計劃書.pdf" [ref=e616] [cursor=pointer]':
+                        - 'generic "6: 大全聯平鎮分公司防護計劃書.pdf" [ref=e617]': "6"
+                      - text: （註：某份舊版紀錄表曾勾選地上 2 層
+                      - 'button "5: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e619] [cursor=pointer]':
+                        - 'generic "5: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e620]': "5"
+                      - text: ，但多數編組與逃生圖涵蓋 B1 至 4 樓範圍
+                      - 'button "7: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e622] [cursor=pointer]':
+                        - 'generic "7: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e623]': "7"
+                      - 'button "8: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e625] [cursor=pointer]':
+                        - 'generic "8: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e626]': "8"
+                      - text: ）。
+                  - heading "二、 樓層面積" [level=3] [ref=e629]
+                  - list [ref=e630]:
+                    - listitem [ref=e633]:
+                      - text: 在提供的《防火演練計畫.docx》範本中，「總樓地板面積」的具體坪數或平方公尺數值為空白，文件並未記載確切的面積數據
+                      - 'button "3: 防火演練計畫.docx" [ref=e635] [cursor=pointer]':
+                        - 'generic "3: 防火演練計畫.docx" [ref=e636]': "3"
+                      - text: 。
+                  - heading "三、 相關日期與關鍵人員" [level=3] [ref=e639]
+                  - list [ref=e640]:
+                    - listitem [ref=e643]:
+                      - text: 管理權人：徐文偉（店總經理）
+                      - 'button "1: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e645] [cursor=pointer]':
+                        - 'generic "1: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e646]': "1"
+                      - button [ref=e648] [cursor=pointer]:
+                        - img [ref=e649]: more_horiz
+                      - text: 。
+                    - listitem [ref=e652]:
+                      - text: 防火管理人異動：
+                      - list [ref=e653]:
+                        - listitem [ref=e656]:
+                          - text: 原任：倪淑貞（安管課長），曾於民國 113 年 8 月 15 日因更換管理權人而提報防護計畫
+                          - 'button "9: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e658] [cursor=pointer]':
+                            - 'generic "9: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e659]': "9"
+                          - text: 。
+                        - listitem [ref=e662]:
+                          - text: 新任：呂忠誠（控管課長），於民國 115 年 4 月 25 日提報異動為新任防火管理人。呂忠誠於 115 年 3 月 27 日取得防火管理人講習證書（字號 F115初00632號）
+                          - 'button "2: 大全聯平鎮分公司防護計劃書.pdf" [ref=e664] [cursor=pointer]':
+                            - 'generic "2: 大全聯平鎮分公司防護計劃書.pdf" [ref=e665]': "2"
+                          - button [ref=e667] [cursor=pointer]:
+                            - img [ref=e668]: more_horiz
+                          - text: 。
+                    - listitem [ref=e671]:
+                      - text: 計畫製定與提報日期：防護計畫書有多個版本更新紀錄，包含 115 年 4 月 18 日與 115 年 4 月 25 日製定版
+                      - 'button "12: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e673] [cursor=pointer]':
+                        - 'generic "12: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e674]': "12"
+                      - 'button "13: 大全聯平鎮分公司防護計劃書.pdf" [ref=e676] [cursor=pointer]':
+                        - 'generic "13: 大全聯平鎮分公司防護計劃書.pdf" [ref=e677]': "13"
+                      - text: 。
+                    - listitem [ref=e680]:
+                      - text: 自衛消防編組訓練日期：最近一次訓練計畫提報為 115 年 6 月 10 日，預計參加人數為 46 人（前次訓練日期為 114 年 12 月 1 日或 112 年 10 月 16 日）
+                      - 'button "5: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e682] [cursor=pointer]':
+                        - 'generic "5: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e683]': "5"
+                      - button [ref=e685] [cursor=pointer]:
+                        - img [ref=e686]: more_horiz
+                      - text: 。
+                  - heading "四、 編組班表（自衛消防編組）" [level=3] [ref=e689]
+                  - generic [ref=e692]: 該場所編制了達 50 人以上的大規模自衛消防隊伍，架構如下：
+                  - list [ref=e693]:
+                    - listitem [ref=e696]:
+                      - text: 總部指揮層級：
+                      - list [ref=e697]:
+                        - listitem [ref=e700]:
+                          - text: 隊長：徐文偉（店總經理），負責發號施令及整體救災活動指揮
+                          - 'button "16: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e702] [cursor=pointer]':
+                            - 'generic "16: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e703]': "16"
+                          - 'button "17: 大全聯平鎮分公司防護計劃書.pdf" [ref=e705] [cursor=pointer]':
+                            - 'generic "17: 大全聯平鎮分公司防護計劃書.pdf" [ref=e706]': "17"
+                          - text: 。
+                        - listitem [ref=e709]:
+                          - text: 副隊長：呂忠誠（控管課長/防火管理人），輔助隊長並於其不在時代理任務
+                          - 'button "16: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e711] [cursor=pointer]':
+                            - 'generic "16: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e712]': "16"
+                          - 'button "17: 大全聯平鎮分公司防護計劃書.pdf" [ref=e714] [cursor=pointer]':
+                            - 'generic "17: 大全聯平鎮分公司防護計劃書.pdf" [ref=e715]': "17"
+                          - text: 。
+                    - listitem [ref=e718]:
+                      - text: 各專責任務班別（全區）：
+                      - list [ref=e719]:
+                        - listitem [ref=e722]:
+                          - text: 指揮班：班長邱美娜，成員包含黃祥瑀、張淑華
+                          - 'button "16: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e724] [cursor=pointer]':
+                            - 'generic "16: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e725]': "16"
+                          - 'button "17: 大全聯平鎮分公司防護計劃書.pdf" [ref=e727] [cursor=pointer]':
+                            - 'generic "17: 大全聯平鎮分公司防護計劃書.pdf" [ref=e728]': "17"
+                          - text: 。
+                        - listitem [ref=e731]:
+                          - text: 通報班：班長為黃健忠或張兆筌，負責向 119 報案及場所內緊急廣播
+                          - 'button "17: 大全聯平鎮分公司防護計劃書.pdf" [ref=e733] [cursor=pointer]':
+                            - 'generic "17: 大全聯平鎮分公司防護計劃書.pdf" [ref=e734]': "17"
+                          - 'button "18: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e736] [cursor=pointer]':
+                            - 'generic "18: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e737]': "18"
+                          - text: 。
+                        - listitem [ref=e740]:
+                          - text: 滅火班：班長葉春煌，負責操作滅火器及消防栓初期滅火
+                          - 'button "18: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e742] [cursor=pointer]':
+                            - 'generic "18: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e743]': "18"
+                          - 'button "19: 大全聯平鎮分公司防護計劃書.pdf" [ref=e745] [cursor=pointer]':
+                            - 'generic "19: 大全聯平鎮分公司防護計劃書.pdf" [ref=e746]': "19"
+                          - text: 。
+                        - listitem [ref=e749]:
+                          - text: 避難引導班：班長吳郁峰或徐志銘，負責引導顧客疏散及確保安全門暢通
+                          - 'button "19: 大全聯平鎮分公司防護計劃書.pdf" [ref=e751] [cursor=pointer]':
+                            - 'generic "19: 大全聯平鎮分公司防護計劃書.pdf" [ref=e752]': "19"
+                          - 'button "20: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e754] [cursor=pointer]':
+                            - 'generic "20: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e755]': "20"
+                          - text: 。
+                        - listitem [ref=e758]:
+                          - text: 安全防護班：班長李建民，負責關閉防火鐵捲門及電梯緊急處置
+                          - 'button "19: 大全聯平鎮分公司防護計劃書.pdf" [ref=e760] [cursor=pointer]':
+                            - 'generic "19: 大全聯平鎮分公司防護計劃書.pdf" [ref=e761]': "19"
+                          - 'button "20: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e763] [cursor=pointer]':
+                            - 'generic "20: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e764]': "20"
+                          - text: 。
+                        - listitem [ref=e767]:
+                          - text: 緊急救護班：班長詹淳翔或莊涵茹，負責受傷人員的緊急處理
+                          - 'button "20: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e769] [cursor=pointer]':
+                            - 'generic "20: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e770]': "20"
+                          - 'button "21: 大全聯平鎮分公司防護計劃書.pdf" [ref=e772] [cursor=pointer]':
+                            - 'generic "21: 大全聯平鎮分公司防護計劃書.pdf" [ref=e773]': "21"
+                          - text: 。
+                    - listitem [ref=e776]:
+                      - text: 地區隊編組（依樓層劃分）：
+                      - list [ref=e777]:
+                        - listitem [ref=e780]:
+                          - text: 一樓地區隊：隊長盧煙伶（生鮮經理）
+                          - 'button "22: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e782] [cursor=pointer]':
+                            - 'generic "22: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e783]': "22"
+                          - button [ref=e785] [cursor=pointer]:
+                            - img [ref=e786]: more_horiz
+                          - text: 。
+                        - listitem [ref=e789]:
+                          - text: 二樓地區隊：隊長邱美娜（電器及服飾經理/百貨經理）
+                          - 'button "8: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e791] [cursor=pointer]':
+                            - 'generic "8: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e792]': "8"
+                          - button [ref=e794] [cursor=pointer]:
+                            - img [ref=e795]: more_horiz
+                          - text: 。
+                        - listitem [ref=e798]:
+                          - text: B1、三、四樓地區隊：隊長林艾雨或張圓旻（人資課長/客服課長）
+                          - 'button "8: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e800] [cursor=pointer]':
+                            - 'generic "8: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e801]': "8"
+                          - button [ref=e803] [cursor=pointer]:
+                            - img [ref=e804]: more_horiz
+                          - text: 。
+                    - listitem [ref=e807]:
+                      - text: 夜間與假日防護體制：設有留值主管擔任隊長，並安排專人（如趙國棟、黃祥瑀、邢鈺正等人）負責夜間初期指揮、通報、滅火與避難引導，並備有完整的緊急聯絡網
+                      - 'button "27: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e809] [cursor=pointer]':
+                        - 'generic "27: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e810]': "27"
+                      - button [ref=e812] [cursor=pointer]:
+                        - img [ref=e813]: more_horiz
+                      - text: 。
+                  - heading "五、 訓練課程（防火演練計畫）" [level=3] [ref=e816]
+                  - generic [ref=e819]:
+                    - text: 依法規要求，甲類場所每半年需舉辦至少 1 次，且每次不得少於 4 小時的自衛消防編組訓練
+                    - 'button "3: 防火演練計畫.docx" [ref=e821] [cursor=pointer]':
+                      - 'generic "3: 防火演練計畫.docx" [ref=e822]': "3"
+                    - button [ref=e824] [cursor=pointer]:
+                      - img [ref=e825]: more_horiz
+                    - text: 。
+                  - list [ref=e826]:
+                    - listitem [ref=e829]:
+                      - text: 教育對象與頻率：新進員工與工讀生於「採用時」實施一次；正式員工於每年 4 月、10 月（或 6 月、12 月）實施每年至少兩次；所有人員平時利用早會時機視需要進行宣導
+                      - 'button "5: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e831] [cursor=pointer]':
+                        - 'generic "5: 115.4.18--防護計劃書(防火管理人更換).pdf" [ref=e832]': "5"
+                      - button [ref=e834] [cursor=pointer]:
+                        - img [ref=e835]: more_horiz
+                      - text: 。
+                    - listitem [ref=e838]:
+                      - text: 標準演練 4 小時流程（腳本）：
+                      - list [ref=e839]:
+                        - listitem [ref=e842]:
+                          - text: 集合與任務說明（30 分鐘）：確認編組清單與演練範圍
+                          - 'button "34: 防火演練計畫.docx" [ref=e844] [cursor=pointer]':
+                            - 'generic "34: 防火演練計畫.docx" [ref=e845]': "34"
+                          - text: 。
+                        - listitem [ref=e848]:
+                          - text: 消防設備教學（30 分鐘）：實作滅火器（拉瞄壓掃）、室內消防栓、火警受信總機、緊急廣播與 AED 急救
+                          - 'button "34: 防火演練計畫.docx" [ref=e850] [cursor=pointer]':
+                            - 'generic "34: 防火演練計畫.docx" [ref=e851]': "34"
+                          - text: 。
+                        - listitem [ref=e854]:
+                          - text: 狀況一模擬（1 小時）：模擬白天營業中「賣場 A 區菸酒櫃」火警，測試各班實際動員與顧客疏散
+                          - 'button "34: 防火演練計畫.docx" [ref=e856] [cursor=pointer]':
+                            - 'generic "34: 防火演練計畫.docx" [ref=e857]': "34"
+                          - text: 。
+                        - listitem [ref=e860]:
+                          - text: 狀況二模擬（1 小時）：模擬夜間閉店後「倉庫火警」，測試最少人力的通報與初期滅火應變
+                          - 'button "34: 防火演練計畫.docx" [ref=e862] [cursor=pointer]':
+                            - 'generic "34: 防火演練計畫.docx" [ref=e863]': "34"
+                          - text: 。
+                        - listitem [ref=e866]:
+                          - text: 分組輪流操作與綜合測試（1 小時）：無腳本盲測，隨機指定起火點，測驗人員真實反應，並進行各動線疏散計時
+                          - 'button "34: 防火演練計畫.docx" [ref=e868] [cursor=pointer]':
+                            - 'generic "34: 防火演練計畫.docx" [ref=e869]': "34"
+                          - text: 。
+                        - listitem [ref=e872]:
+                          - text: 檢討會議（30 分鐘）：針對缺失檢討並填寫紀錄
+                          - 'button "34: 防火演練計畫.docx" [ref=e874] [cursor=pointer]':
+                            - 'generic "34: 防火演練計畫.docx" [ref=e875]': "34"
+                          - text: 。
+                    - listitem [ref=e878]:
+                      - text: 演練績效目標：全館疏散完畢（含顧客）須在 8 分鐘內，員工抵達集合點需在 5 分鐘內；滅火班抵達現場須低於 2 分鐘，完成 119 報案須低於 1 分鐘
+                      - 'button "35: 防火演練計畫.docx" [ref=e880] [cursor=pointer]':
+                        - 'generic "35: 防火演練計畫.docx" [ref=e881]': "35"
+                      - text: 。
+                - generic [ref=e882]:
+                  - button "將訊息儲存至記事" [ref=e883]:
+                    - img [ref=e884]: keep_pin
+                    - generic [ref=e885]: 儲存至記事
+                  - generic [ref=e888]:
+                    - button "將模型回覆複製到剪貼簿" [ref=e892] [cursor=pointer]:
+                      - img [ref=e893]: copy_all
+                    - button "給予回覆好評" [ref=e899] [cursor=pointer]:
+                      - img [ref=e900]: thumb_up
+                    - button "給予回覆負評" [ref=e906] [cursor=pointer]:
+                      - img [ref=e907]: thumb_down
+                - generic [ref=e912]:
+                  - button "自衛消防編組訓練的 8 分鐘疏散目標是如何訂定的？":
+                    - generic: 自衛消防編組訓練的 8 分鐘疏散目標是如何訂定的？
+                  - button "吕忠誠防火管理人的證照有效期限到什麼時候？":
+                    - generic: 吕忠誠防火管理人的證照有效期限到什麼時候？
+                  - button "若在夜間發生火警，具體的緊急聯絡與通報流程為何？":
+                    - generic: 若在夜間發生火警，具體的緊急聯絡與通報流程為何？
+            - generic [ref=e919]:
+              - heading "請詳細列出消防防護計劃書中的所有編組人員完整姓名（含地區隊、夜間編組），以及各班的完整成員姓名" [level=3] [ref=e925]:
+                - paragraph [ref=e926]: 請詳細列出消防防護計劃書中的所有編組人員完整姓名（含地區隊、夜間編組），以及各班的完整成員姓名
+              - generic [ref=e933]:
+                - img [ref=e935]
+                - generic [ref=e942]: Cleaning Name Extractions...
+          - generic [ref=e114]:
+            - textbox "查詢方塊" [disabled] [ref=e116]:
+              - /placeholder: 正在回覆...
+            - generic [ref=e117]:
+              - generic [ref=e119]: 5 個來源
+              - button "停止生成" [ref=e943] [cursor=pointer]:
+                - img [ref=e944]: stop
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - navigation [ref=e346]:
+            - heading "工作室" [level=2] [ref=e347]:
+              - generic [ref=e348]: 工作室
+          - button "收合「工作室」面板" [ref=e349] [cursor=pointer]:
+            - img [ref=e123]: dock_to_left
+        - generic [ref=e350]:
+          - generic [ref=e351]:
+            - button "語音摘要" [ref=e353] [cursor=pointer]:
+              - generic [ref=e354]:
+                - generic [ref=e355]:
+                  - img [ref=e357]: audio_magic_eraser
+                  - generic [ref=e358]: 語音摘要
+                - button "自訂語音摘要" [ref=e360]:
+                  - img [ref=e361]: chevron_forward
+            - button "簡報" [ref=e365] [cursor=pointer]:
+              - generic [ref=e366]:
+                - generic [ref=e367]:
+                  - img [ref=e369]: tablet
+                  - generic [ref=e370]: 簡報
+                - button "自訂簡報" [ref=e372]:
+                  - img [ref=e373]: chevron_forward
+            - button "影片摘要" [ref=e377] [cursor=pointer]:
+              - generic [ref=e378]:
+                - generic [ref=e379]:
+                  - img [ref=e381]: subscriptions
+                  - generic [ref=e382]: 影片摘要
+                - img [ref=e384]: chevron_forward
+            - button "心智圖" [ref=e386] [cursor=pointer]:
+              - generic [ref=e387]:
+                - generic [ref=e388]:
+                  - img [ref=e390]: flowchart
+                  - generic [ref=e391]: 心智圖
+                - button "自訂心智圖" [ref=e393]:
+                  - img [ref=e394]: chevron_forward
+            - button "報告" [ref=e398] [cursor=pointer]:
+              - generic [ref=e399]:
+                - generic [ref=e400]:
+                  - img [ref=e402]: auto_tab_group
+                  - generic [ref=e403]: 報告
+                - img [ref=e405]: chevron_forward
+            - button "學習卡" [ref=e407] [cursor=pointer]:
+              - generic [ref=e408]:
+                - generic [ref=e409]:
+                  - img [ref=e411]: cards_star
+                  - generic [ref=e412]: 學習卡
+                - button "自訂學習卡" [ref=e414]:
+                  - img [ref=e415]: chevron_forward
+            - button "測驗" [ref=e419] [cursor=pointer]:
+              - generic [ref=e420]:
+                - generic [ref=e421]:
+                  - img [ref=e423]: quiz
+                  - generic [ref=e424]: 測驗
+                - button "自訂測驗" [ref=e426]:
+                  - img [ref=e427]: chevron_forward
+            - button "資訊圖表" [ref=e431] [cursor=pointer]:
+              - generic [ref=e432]:
+                - generic [ref=e433]:
+                  - img [ref=e435]: stacked_bar_chart
+                  - generic [ref=e436]: 資訊圖表
+                - button "自訂資訊圖表" [ref=e438]:
+                  - img [ref=e439]: chevron_forward
+            - button "資料表" [ref=e443] [cursor=pointer]:
+              - generic [ref=e444]:
+                - generic [ref=e445]:
+                  - img [ref=e447]: table_view
+                  - generic [ref=e448]: 資料表
+                - button "自訂資料表" [ref=e450]:
+                  - img [ref=e451]: chevron_forward
+          - generic [ref=e455]:
+            - generic [ref=e459] [cursor=pointer]:
+              - button "防火演練心智圖 1 個來源 · 1 小時前" [ref=e460]
+              - generic:
+                - img: flowchart
+                - generic:
+                  - generic:
+                    - generic: 防火演練心智圖
+                  - generic: 1 個來源 · 1 小時前
+              - button "更多" [ref=e464]:
+                - img [ref=e465]: more_vert
+            - button "新增記事" [ref=e468]:
+              - img [ref=e469]: sticky_note_2
+              - generic [ref=e470]: 新增記事
+    - contentinfo [ref=e129]: NotebookLM 提供的資訊未必正確，請查證回覆內容。
+  - generic [ref=e130]: 思考中...
