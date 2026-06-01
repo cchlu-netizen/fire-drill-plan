@@ -17,7 +17,7 @@
     return decodeURIComponent(location.pathname).split('/').pop() || 'index.html';
   }
 
-  var dbRef = firebase.database().ref('contents/' + fn());
+  var dbRef = firebase.database().ref('contents/' + fn().replace(/[.#$\[\]]/g, '_'));
   var skipNext = false;
 
   dbRef.on('value', function(snap) {
