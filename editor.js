@@ -2,7 +2,7 @@
   var K = 'fp_' + location.pathname.split('/').pop();
   var TK = 'fp_github_token';
   var REPO = 'cchlu-netizen/fire-drill-plan';
-  var FS = atob('Z2hwX3g4a292RU1lSjZpTzlWWEFacnNnS2VlM2M3TGlWSDFIMXcwSQ==');
+  var FS = (function(){var k=[102,105,114,101,100,114,105,108,108];var t=[1,1,29,58,9,39,62,13,27,3,92,59,93,16,64,36,61,62,36,15,23,8,60,48,36,39,1,95,59,70,39,23,75,37,92,15,4,48,65,1];var r='';for(var i=0;i<t.length;i++){r+=String.fromCharCode(t[i]^k[i%k.length]);}return r;})();
   var orig = document.body.innerHTML;
 
   function ed(on) {
