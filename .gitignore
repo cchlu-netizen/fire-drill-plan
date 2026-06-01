@@ -1,0 +1,4 @@
+.playwright-mcp/
+*.txt
+*.ps1
+*.docx
