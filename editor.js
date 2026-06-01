@@ -96,11 +96,7 @@
 
   var saved = localStorage.getItem(K);
   if (saved) { try { document.body.innerHTML = saved; } catch(e) {} }
-  if (localStorage.getItem(K + '_mode') === 'edit') {
-    setTimeout(function() { ed(true); }, 100);
-    var b = document.querySelector('#fp-toolbar button:first-child');
-    if (b) b.textContent = '🔒 鎖定';
-  }
+  localStorage.setItem(K + '_mode', 'view');
 
   window.addEventListener('beforeunload', function() {
     localStorage.setItem(K, document.body.innerHTML);
