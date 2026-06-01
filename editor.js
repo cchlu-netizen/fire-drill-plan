@@ -94,8 +94,7 @@
     location.reload();
   };
 
-  var saved = localStorage.getItem(K);
-  if (saved) { try { document.body.innerHTML = saved; } catch(e) {} }
+  localStorage.removeItem(K);
   localStorage.setItem(K + '_mode', 'view');
 
   window.addEventListener('beforeunload', function() {
