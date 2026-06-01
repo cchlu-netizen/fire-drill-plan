@@ -19,7 +19,7 @@
   }
 
   function fn() {
-    return location.pathname.split('/').pop() || 'index.html';
+    return decodeURIComponent(location.pathname).split('/').pop() || 'index.html';
   }
 
   function b64(str) {
