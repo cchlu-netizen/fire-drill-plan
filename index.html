@@ -182,6 +182,7 @@
   <div id="share-link" style="display:none;">
     <a id="share-url" href="#" target="_blank" style="color:#3498db;font-size:12px;text-decoration:none;">雲端連結 →</a>
   </div>
+  <a href="https://github.com/cchlu-netizen/fire-drill-plan" target="_blank" style="color:#95a5a6;font-size:11px;text-decoration:none;margin-left:4px;" title="使用 deploy.ps1 自動部署免輸入 Token">⚡</a>
 </div>
 
 <div id="main-content">
@@ -334,13 +335,14 @@
   <strong>📌 備註</strong><br>
   • 所有日期經查歷史同期資料，業績均落在 2,500~4,500 平穩區間，已避開歷史高峰日<br>
   • 8 月因中元管制期（節前 45 天～節後 7 天）橫跨整個月份，故彈性移至鄰近月份<br>
-  • 如遇颱風等不可抗力因素，請順延至次週同日同時段
+  • 如遇颱風等不可抗力因素，請順延至次週同日同時段<br>
+  • 💡 免 Token 部署：執行 <code>deploy.ps1</code> 即可自動更新 Gist + GitHub Pages（無需輸入 Token）
 </div>
 
 </div><!-- /main-content -->
 
 <script>
-const GIST_ID   = '';
+const GIST_ID   = '1c837d6668b7f9135d99e4c2fd3db27c';
 const GIST_FILE = 'fire-drill-plan-2026-2027.html';
 
 let currentGistId   = GIST_ID   || localStorage.getItem('gist_id')   || '';
