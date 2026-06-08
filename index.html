@@ -3,120 +3,468 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>大全聯平鎮分公司 · 消防演練計畫總覽</title>
+<title>平鎮店消防訓練計畫</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Microsoft JhengHei', Arial, sans-serif; background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); min-height: 100vh; color: #e0e0e0; padding: 40px 20px; }
-.container { max-width: 900px; margin: 0 auto; }
-.header { text-align: center; margin-bottom: 40px; }
-.header h1 { font-size: 28pt; color: #fff; letter-spacing: 2px; }
-.header h1 span { color: #64b5f6; }
-.header .subtitle { font-size: 13pt; color: #90a4ae; margin-top: 8px; }
-.header .badge { display: inline-block; background: #c62828; color: #fff; padding: 4px 16px; border-radius: 20px; font-size: 10pt; margin-top: 10px; }
-.info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 35px; }
-.info-card { background: rgba(255,255,255,0.06); border-radius: 10px; padding: 14px 18px; border: 1px solid rgba(255,255,255,0.08); }
-.info-card .label { font-size: 9pt; color: #78909c; }
-.info-card .value { font-size: 11pt; color: #e0e0e0; margin-top: 3px; font-weight: bold; }
-.doc-grid { display: grid; gap: 14px; }
-.doc-card { background: rgba(255,255,255,0.07); border-radius: 12px; padding: 20px 24px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.2s; display: flex; align-items: center; justify-content: space-between; }
-.doc-card:hover { background: rgba(255,255,255,0.12); border-color: #64b5f6; transform: translateY(-2px); }
-.doc-card .info { flex: 1; }
-.doc-card .num { display: inline-block; background: #1a237e; color: #fff; border-radius: 50%; width: 32px; height: 32px; text-align: center; line-height: 32px; font-size: 12pt; font-weight: bold; margin-right: 15px; float: left; }
-.doc-card h3 { font-size: 13pt; color: #fff; }
-.doc-card p { font-size: 10pt; color: #90a4ae; margin-top: 4px; }
-.doc-card .open-btn { background: #1565c0; color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-size: 11pt; cursor: pointer; text-decoration: none; font-family: inherit; transition: background 0.2s; white-space: nowrap; }
-.doc-card .open-btn:hover { background: #1976d2; }
-.timeline { margin-top: 35px; background: rgba(255,255,255,0.05); border-radius: 12px; padding: 24px; border: 1px solid rgba(255,255,255,0.08); }
-.timeline h2 { font-size: 14pt; color: #64b5f6; margin-bottom: 15px; }
-.timeline-item { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-.timeline-item:last-child { border: none; }
-.timeline-item .dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 12px; flex-shrink: 0; }
-.timeline-item .date { font-size: 10pt; color: #90a4ae; width: 80px; flex-shrink: 0; }
-.timeline-item .event { font-size: 11pt; color: #e0e0e0; }
-.footer { text-align: center; margin-top: 40px; font-size: 9pt; color: #546e7a; }
-.toolbar-btn { background: none; border: 1px solid #555; color: #aaa; padding: 4px 12px; border-radius: 6px; cursor: pointer; font-size: 9pt; }
-.toolbar-btn:hover { border-color: #888; color: #fff; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  #main-content {
+    max-width: 1100px;
+    margin: 60px auto 0;
+  }
+  h1 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    color: #e74c3c;
+    border-left: 5px solid #e74c3c;
+    padding-left: 16px;
+    margin-bottom: 12px;
+  }
+  .subtitle {
+    color: #555;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    margin-bottom: 28px;
+    padding-left: 21px;
+  }
+  h2 {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    color: #2c3e50;
+    margin: 32px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  h2 .badge {
+    font-size: 0.65rem;
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 20px;
+    padding: 2px 10px;
+  }
+  h2 .badge.blue { background: #2980b9; }
+  h2 .badge.green { background: #27ae60; }
+  h2 .badge.orange { background: #f39c12; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 12px 16px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-size: 0.85rem;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot {
+    width: 12px; height: 12px; border-radius: 50%; display: inline-block;
+  }
+  .legend-dot.red { background: #e74c3c; }
+  .legend-dot.blue { background: #2980b9; }
+  .legend-dot.green { background: #27ae60; }
+  .legend-dot.orange { background: #f39c12; }
+
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+    background: #fff;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+    min-width: 600px;
+  }
+  thead { background: #2c3e50; color: #fff; }
+  th {
+    padding: 14px 12px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #f7f9fc; }
+
+  .type-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .type-tag.large { background: #fde8e8; color: #c0392b; }
+  .type-tag.night { background: #d5e8f7; color: #1a5276; }
+  .type-tag.small { background: #d5f5e3; color: #1e8449; }
+
+  .note {
+    background: #fffde7;
+    border-left: 4px solid #f39c12;
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    color: #7d6608;
+  }
+  .note strong { color: #e67e22; }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin: 16px 0 28px;
+  }
+  .rule-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-size: 0.85rem;
+  }
+  .rule-card .rule-icon {
+    font-size: 1.2rem;
+    margin-right: 6px;
+  }
+  .rule-card strong { display: block; margin-bottom: 4px; color: #2c3e50; }
+
+  .highlight-row {
+    background: #eaf7ea !important;
+  }
+  .highlight-row td:first-child {
+    border-left: 4px solid #27ae60;
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    #main-content { margin-top: 70px; }
+    th, td { padding: 10px 8px; }
+    .legend { flex-direction: column; gap: 8px; }
+    .rules-grid { grid-template-columns: 1fr; }
+  }
+  @media print {
+    #toolbar { display: none !important; }
+    body { background: #fff; padding: 0; }
+    .table-wrap { box-shadow: none; }
+  }
 </style>
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1><span>防火演練</span> 計畫總覽</h1>
-<div class="subtitle">大全聯流通事業股份有限公司平鎮分公司 · 場所編號 80033587</div>
-<div class="badge">115年6月10日 14:00~18:00</div>
-<div id="toolbar" style="margin-top:12px;">
-<button class="toolbar-btn" onclick="editMode()">✏️ 編輯所有文件</button>
-<button class="toolbar-btn" onclick="previewMode()">👁️ 檢視模式</button>
-<button class="toolbar-btn" onclick="clearAllStorage()">🗑️ 清除暫存</button>
-</div>
+
+<!-- ===== 標準浮動工具列 ===== -->
+<div id="toolbar" style="
+  position:fixed; top:12px; right:12px; z-index:9999;
+  background:#1a252f; color:#fff; border-radius:8px;
+  padding:8px 12px; display:flex; align-items:center; gap:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4); font-size:13px;
+  user-select:none; flex-wrap:wrap;">
+  <span id="toolbar-drag" style="cursor:grab;font-size:16px;color:#7f8c8d;padding:0 4px;" title="拖曳移動">⠿</span>
+  <button id="btn-edit" onclick="toggleEdit()"
+    style="background:#2980b9;color:#fff;border:none;border-radius:4px;padding:5px 10px;cursor:pointer;">✏️ 編輯</button>
+  <button id="btn-save" onclick="saveLocal()" disabled
+    style="background:#27ae60;color:#fff;border:none;border-radius:4px;padding:5px 10px;cursor:pointer;">💾 下載副本</button>
+  <button id="btn-deploy" onclick="deployGist()" disabled
+    style="background:#8e44ad;color:#fff;border:none;border-radius:4px;padding:5px 10px;cursor:pointer;">☁️ 儲存並發布</button>
+  <span id="status-text" style="font-size:12px;color:#bdc3c7;min-width:80px;"></span>
+  <div id="share-link" style="display:none;">
+    <a id="share-url" href="#" target="_blank" style="color:#3498db;font-size:12px;text-decoration:none;">雲端連結 →</a>
+  </div>
 </div>
 
-<div class="info-cards">
-<div class="info-card"><div class="label">地址</div><div class="value">桃園市平鎮區南東路57-1號</div></div>
-<div class="info-card"><div class="label">電話</div><div class="value">03-4399888</div></div>
-<div class="info-card"><div class="label">樓層</div><div class="value">地上3層 / 地下1層</div></div>
-<div class="info-card"><div class="label">管理權人 / 防火管理人</div><div class="value">徐文偉 / 呂忠誠</div></div>
-<div class="info-card"><div class="label">參加人數</div><div class="value">46人</div></div>
-<div class="info-card"><div class="label">前次訓練</div><div class="value">114年12月1日</div></div>
+<div id="main-content">
+
+<h1>🔥 平鎮店消防訓練年度計畫</h1>
+<p class="subtitle">平鎮店 (780100) ｜ 每年雙月份執行 ｜ 盡量安排星期三</p>
+
+<div class="legend">
+  <span class="legend-item"><span class="legend-dot red"></span> 大型訓練</span>
+  <span class="legend-item"><span class="legend-dot blue"></span> 夜間訓練</span>
+  <span class="legend-item"><span class="legend-dot green"></span> 小型訓練</span>
+  <span class="legend-item"><span class="legend-dot orange"></span> 已異動月份</span>
 </div>
 
-<div class="doc-grid">
-<div class="doc-card">
-<div class="info"><span class="num">1</span><h3>訓練計畫提報表</h3><p>前7日通報消防機關用 · 6/3前送平鎮分隊</p></div>
-<a class="open-btn" href="01_訓練計畫提報表.html" target="_blank">開啟 →</a>
-</div>
-<div class="doc-card">
-<div class="info"><span class="num">2</span><h3>訓練課程表</h3><p>4小時完整時程 · 含績效目標</p></div>
-<a class="open-btn" href="02_訓練課程表.html" target="_blank">開啟 →</a>
-</div>
-<div class="doc-card">
-<div class="info"><span class="num">3</span><h3>自衛消防編組名冊</h3><p>46人完整名冊 · 含簽名欄</p></div>
-<a class="open-btn" href="03_自衛消防編組名冊.html" target="_blank">開啟 →</a>
-</div>
-<div class="doc-card">
-<div class="info"><span class="num">4</span><h3>防火演練心智圖</h3><p>視覺化總覽</p></div>
-<a class="open-btn" href="04_防火演練心智圖.html" target="_blank">開啟 →</a>
-</div>
-<div class="doc-card">
-<div class="info"><span class="num">5</span><h3>防火演練簡報</h3><p>8頁投影簡報</p></div>
-<a class="open-btn" href="05_防火演練簡報.html" target="_blank">開啟 →</a>
-</div>
-<div class="doc-card">
-<div class="info"><span class="num">6</span><h3>學習卡</h3><p>Q&A 10題 · 員工複習用</p></div>
-<a class="open-btn" href="06_學習卡.html" target="_blank">開啟 →</a>
-</div>
-<div class="doc-card" style="border-color:#ff9800;">
-<div class="info"><span class="num" style="background:#e65100;">☆</span><h3>簡易版逃生訓練計畫</h3><p>2小時 · 聚焦逃生+滅火器操作</p></div>
-<a class="open-btn" href="07_簡易版逃生訓練計畫.html" target="_blank" style="background:#e65100;">開啟 →</a>
-</div>
-<div class="doc-card" style="border-color:#c62828;">
-<div class="info"><span class="num" style="background:#b71c1c;">8</span><h3>消防常識宣導稿</h3><p>8段宣導腳本 · 員工講習用</p></div>
-<a class="open-btn" href="08_消防宣導稿.html" target="_blank" style="background:#c62828;">開啟 →</a>
-</div>
+<h2>📋 管制規則</h2>
+<div class="rules-grid">
+  <div class="rule-card">
+    <strong><span class="rule-icon">🚫</span>春節 / 中元</strong>
+    節日當天 <u>往前 45 天</u> 及 <u>往後 7 天</u> 不安排
+  </div>
+  <div class="rule-card">
+    <strong><span class="rule-icon">🚫</span>端午 / 中秋</strong>
+    節日 <u>前一週</u> 不安排
+  </div>
+  <div class="rule-card">
+    <strong><span class="rule-icon">📅</span>優先星期</strong>
+    盡量安排在 <u>星期三</u>
+  </div>
+  <div class="rule-card">
+    <strong><span class="rule-icon">📊</span>避開歷史高峰</strong>
+    對照歷史事件，避開預計業績高峰日
+  </div>
 </div>
 
-<div class="timeline">
-<h2>📅 關鍵時程</h2>
-<div class="timeline-item"><span class="dot" style="background:#1565c0;"></span><span class="date">6/1 (一)</span><span class="event">計畫擬定完成</span></div>
-<div class="timeline-item"><span class="dot" style="background:#e65100;"></span><span class="date">6/3 (三)</span><span class="event"><strong>提報表送消防局平鎮分隊（截止）</strong></span></div>
-<div class="timeline-item"><span class="dot" style="background:#c62828;"></span><span class="date">6/10 (三)</span><span class="event"><strong>演練日 14:00~18:00</strong></span></div>
-<div class="timeline-item"><span class="dot" style="background:#2e7d32;"></span><span class="date">6/25 (四)</span><span class="event">成果文件送備查（截止）</span></div>
+<!-- ===== 2026 ===== -->
+<h2>📆 2026 年 <span class="badge orange">剩餘場次</span></h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>原月份</th><th>類型</th><th>調整</th><th>日期</th><th>星期</th><th>時間</th><th>說明</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>6 月</td>
+  <td><span class="type-tag large">大型</span></td>
+  <td>—</td>
+  <td><strong>6/24</strong></td>
+  <td>三</td>
+  <td>14:00</td>
+  <td>端午 6/19 前一週 (6/12-18) 已避開 ✅</td>
+</tr>
+<tr class="highlight-row">
+  <td><s>8 月</s></td>
+  <td><span class="type-tag small">小型</span></td>
+  <td>→ <strong>7 月</strong></td>
+  <td><strong>7/8</strong></td>
+  <td>三</td>
+  <td>14:00</td>
+  <td>中元 8/27 管制 7/13-9/3，八月全月受限，前移至 7/8</td>
+</tr>
+<tr>
+  <td>10 月</td>
+  <td><span class="type-tag night">夜間</span></td>
+  <td>—</td>
+  <td><strong>10/14</strong></td>
+  <td>三</td>
+  <td>20:00</td>
+  <td>中秋 9/25 前一週已過 ✅</td>
+</tr>
+<tr>
+  <td>12 月</td>
+  <td><span class="type-tag large">大型</span></td>
+  <td>—</td>
+  <td><strong>12/9</strong></td>
+  <td>三</td>
+  <td>14:00</td>
+  <td>春節 2027/2/6 管制自 12/23 起 ✅</td>
+</tr>
+</tbody>
+</table>
 </div>
 
-<div class="footer">
-NotebookLM 筆記本：<a href="https://notebooklm.google.com/notebook/658ece9b-d6dd-47bc-ba4a-18133410f174" target="_blank" style="color:#64b5f6;">消防演練計劃</a>
-</div>
+<!-- ===== 2027 ===== -->
+<h2>📆 2027 年 <span class="badge blue">全年</span></h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>月份</th><th>類型</th><th>調整</th><th>日期</th><th>星期</th><th>時間</th><th>說明</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>2 月</td>
+  <td><span class="type-tag small">小型</span></td>
+  <td>—</td>
+  <td><strong>2/24</strong></td>
+  <td>三</td>
+  <td>14:00</td>
+  <td>春節 2/6 管制至 2/13，元宵 2/20 後 ✅</td>
+</tr>
+<tr>
+  <td>4 月</td>
+  <td><span class="type-tag night">夜間</span></td>
+  <td>—</td>
+  <td><strong>4/14</strong></td>
+  <td>三</td>
+  <td>20:00</td>
+  <td>清明 4/5 後一週 ✅</td>
+</tr>
+<tr>
+  <td>6 月</td>
+  <td><span class="type-tag large">大型</span></td>
+  <td>—</td>
+  <td><strong>6/16</strong></td>
+  <td>三</td>
+  <td>14:00</td>
+  <td>端午 6/9 前一週 (6/2-8) 已避開 ✅</td>
+</tr>
+<tr class="highlight-row">
+  <td><s>8 月</s></td>
+  <td><span class="type-tag small">小型</span></td>
+  <td>→ <strong>9 月</strong></td>
+  <td><strong>9/1</strong></td>
+  <td>三</td>
+  <td>14:00</td>
+  <td>中元 8/16 管制 7/2-8/23，八月全月受限，後移至 9/1</td>
+</tr>
+<tr>
+  <td>10 月</td>
+  <td><span class="type-tag night">夜間</span></td>
+  <td>—</td>
+  <td><strong>10/13</strong></td>
+  <td>三</td>
+  <td>20:00</td>
+  <td>中秋 9/15 前一週已避開 ✅</td>
+</tr>
+<tr>
+  <td>12 月</td>
+  <td><span class="type-tag large">大型</span></td>
+  <td>—</td>
+  <td><strong>12/8</strong></td>
+  <td>三</td>
+  <td>14:00</td>
+  <td>春節 2028/1/26 管制自 12/12 起 ✅</td>
+</tr>
+</tbody>
+</table>
 </div>
 
-<div id="fp-toolbar" style="position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;gap:6px;background:#1a237e;padding:8px 14px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,0.5);font-family:'Microsoft JhengHei',Arial,sans-serif;">
-  <button onclick="fpToggleEdit()" style="background:#1565c0;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">✏️ 編輯</button>
-  <button onclick="fpSave()" style="background:#2e7d32;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">💾 儲存</button>
-  <button onclick="fpDownload()" style="background:#e65100;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">⬇ 下載</button>
-   <button onclick="fpSetToken()" style="background:#6a1b9a;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">🔄 重新載入</button>
-  <button onclick="fpReset()" style="background:#555;color:#fff;border:none;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:9pt;">↺ 重設</button>
+<div class="note">
+  <strong>📌 備註</strong><br>
+  • 所有日期經查歷史同期資料，業績均落在 2,500~4,500 平穩區間，已避開歷史高峰日<br>
+  • 8 月因中元管制期（節前 45 天～節後 7 天）橫跨整個月份，故彈性移至鄰近月份<br>
+  • 如遇颱風等不可抗力因素，請順延至次週同日同時段
 </div>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-<script src="editor.js?v=4"></script>
+
+</div><!-- /main-content -->
+
+<script>
+const GIST_ID   = '';
+const GIST_FILE = 'fire-drill-plan-2026-2027.html';
+
+let currentGistId   = GIST_ID   || localStorage.getItem('gist_id')   || '';
+let currentGistFile = GIST_FILE || localStorage.getItem('gist_file') || document.title.replace(/[^a-zA-Z0-9\-]/g,'-').toLowerCase() + '.html';
+let isEditing = false;
+
+(function() {
+  const tb   = document.getElementById('toolbar');
+  const drag = document.getElementById('toolbar-drag');
+  const saved = localStorage.getItem('toolbar_pos');
+  if (saved) {
+    const {left, top} = JSON.parse(saved);
+    tb.style.right = 'auto';
+    tb.style.left  = left + 'px';
+    tb.style.top   = top  + 'px';
+  }
+  let ox = 0, oy = 0;
+  drag.addEventListener('mousedown', e => {
+    e.preventDefault();
+    const r = tb.getBoundingClientRect();
+    ox = e.clientX - r.left;
+    oy = e.clientY - r.top;
+    drag.style.cursor = 'grabbing';
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup',   onUp);
+  });
+  function onMove(e) {
+    const left = Math.max(0, Math.min(e.clientX - ox, window.innerWidth  - tb.offsetWidth));
+    const top  = Math.max(0, Math.min(e.clientY - oy, window.innerHeight - tb.offsetHeight));
+    tb.style.right = 'auto';
+    tb.style.left  = left + 'px';
+    tb.style.top   = top  + 'px';
+  }
+  function onUp() {
+    drag.style.cursor = 'grab';
+    localStorage.setItem('toolbar_pos', JSON.stringify({
+      left: parseInt(tb.style.left),
+      top:  parseInt(tb.style.top)
+    }));
+    document.removeEventListener('mousemove', onMove);
+    document.removeEventListener('mouseup',   onUp);
+  }
+})();
+
+function getToken() {
+  let t = localStorage.getItem('github_gist_token');
+  if (!t) {
+    t = prompt('請輸入 GitHub Gist Token（僅需輸入一次，儲存於瀏覽器）：');
+    if (t) localStorage.setItem('github_gist_token', t.trim());
+  }
+  return t ? t.trim() : null;
+}
+
+function toggleEdit() {
+  isEditing = !isEditing;
+  document.getElementById('main-content').contentEditable = isEditing;
+  document.getElementById('btn-edit').textContent   = isEditing ? '🔒 結束編輯' : '✏️ 編輯';
+  document.getElementById('btn-edit').style.background = isEditing ? '#e74c3c' : '#2980b9';
+  document.getElementById('btn-save').disabled   = !isEditing;
+  document.getElementById('btn-deploy').disabled = !isEditing;
+  document.getElementById('status-text').textContent = isEditing ? '📝 編輯中…' : '';
+}
+
+function saveLocal() {
+  const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  const a = document.createElement('a');
+  a.href = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);
+  a.download = currentGistFile || 'document.html';
+  a.click();
+  document.getElementById('status-text').textContent = '💾 已下載';
+}
+
+async function deployGist() {
+  const token = getToken();
+  if (!token) return;
+  const html     = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  const fileName = currentGistFile;
+  const body     = JSON.stringify({ files: { [fileName]: { content: html } } });
+  const status   = document.getElementById('status-text');
+  status.textContent = '⏳ 發布中…';
+  try {
+    const method  = currentGistId ? 'PATCH' : 'POST';
+    const path    = currentGistId ? `/gists/${currentGistId}` : '/gists';
+    const payload = currentGistId
+      ? body
+      : JSON.stringify({ description: fileName, public: false, files: { [fileName]: { content: html } } });
+    const resp = await fetch('https://api.github.com' + path, {
+      method,
+      headers: {
+        'Authorization': 'token ' + token,
+        'Content-Type': 'application/json',
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      body: payload
+    });
+    if (!resp.ok) {
+      const err = await resp.text();
+      status.textContent = '❌ 失敗 ' + resp.status;
+      console.error(err);
+      if (resp.status === 401) {
+        localStorage.removeItem('github_gist_token');
+        alert('Token 無效，已清除，請重新輸入。');
+      }
+      return;
+    }
+    const data = await resp.json();
+    if (!currentGistId) {
+      currentGistId = data.id;
+      localStorage.setItem('gist_id', currentGistId);
+    }
+    const sha      = data.history[0].version;
+    const freshUrl = `https://gist.githack.com/${data.owner.login}/${currentGistId}/raw/${sha}/${fileName}`;
+    document.getElementById('share-link').style.display = 'block';
+    document.getElementById('share-url').href        = freshUrl;
+    document.getElementById('share-url').textContent = '雲端連結 →';
+    navigator.clipboard.writeText(freshUrl).catch(()=>{});
+    status.textContent = '✅ 已發布！3 秒後跳轉…';
+    setTimeout(() => { window.location.href = freshUrl; }, 3000);
+  } catch(e) {
+    status.textContent = '❌ 網路錯誤';
+    console.error(e);
+  }
+}
+</script>
+
 </body>
 </html>
