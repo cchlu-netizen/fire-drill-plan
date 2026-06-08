@@ -336,33 +336,57 @@
   • 所有日期經查歷史同期資料，業績均落在 2,500~4,500 平穩區間，已避開歷史高峰日<br>
   • 8 月因中元管制期（節前 45 天～節後 7 天）橫跨整個月份，故彈性移至鄰近月份<br>
   • 如遇颱風等不可抗力因素，請順延至次週同日同時段<br>
-  • 💡 免 Token 部署：執行 <code>deploy.ps1</code> 即可自動更新 Gist + GitHub Pages（無需輸入 Token）
+  • 💡 點擊「✏️ 編輯」修改內容後，按「☁️ 儲存並發布」即可自動同步到雲端，所有人重新整理頁面後即可看到最新版本
 </div>
 
 </div><!-- /main-content -->
 
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <script>
-const GIST_ID   = '1c837d6668b7f9135d99e4c2fd3db27c';
-const GIST_FILE = 'fire-drill-plan-2026-2027.html';
+// ── Firebase 設定（與 editor.js 相同專案）──
+firebase.initializeApp({
+  apiKey:            "AIzaSyANWORL9XLaoW9ncUj_Go44oiDJyEJJcqs",
+  authDomain:        "fire-drill-pingzhen.firebaseapp.com",
+  databaseURL:       "https://fire-drill-pingzhen-default-rtdb.firebaseio.com",
+  projectId:         "fire-drill-pingzhen",
+  storageBucket:     "fire-drill-pingzhen.firebasestorage.app",
+  messagingSenderId: "488420822527",
+  appId:             "1:488420822527:web:a9a0fde305fc670932ebca"
+});
+var DB_REF_KEY = 'contents/index_html';
+var dbRef = firebase.database().ref(DB_REF_KEY);
+var isEditing = false;
+var skipNextDbUpdate = false;
 
-let currentGistId   = GIST_ID   || localStorage.getItem('gist_id')   || '';
-let currentGistFile = GIST_FILE || localStorage.getItem('gist_file') || document.title.replace(/[^a-zA-Z0-9\-]/g,'-').toLowerCase() + '.html';
-let isEditing = false;
-
-(function() {
-  const tb   = document.getElementById('toolbar');
-  const drag = document.getElementById('toolbar-drag');
-  const saved = localStorage.getItem('toolbar_pos');
-  if (saved) {
-    const {left, top} = JSON.parse(saved);
-    tb.style.right = 'auto';
-    tb.style.left  = left + 'px';
-    tb.style.top   = top  + 'px';
+// ── 啟動時從雲端載入最新內容 ──
+dbRef.once('value').then(function(snap) {
+  var val = snap.val();
+  if (val) {
+    document.getElementById('main-content').innerHTML = val;
+    document.getElementById('status-text').textContent = '☁️ 已載入雲端';
+    setTimeout(function() { document.getElementById('status-text').textContent = ''; }, 2000);
   }
-  let ox = 0, oy = 0;
-  drag.addEventListener('mousedown', e => {
+}).catch(function(e) {
+  console.warn('雲端載入失敗，使用本機版本：', e.message);
+});
+
+// ── 工具列拖曳 ──
+(function() {
+  var tb   = document.getElementById('toolbar');
+  var drag = document.getElementById('toolbar-drag');
+  var saved = localStorage.getItem('toolbar_pos');
+  if (saved) {
+    var pos = JSON.parse(saved);
+    tb.style.right = 'auto';
+    tb.style.left  = pos.left + 'px';
+    tb.style.top   = pos.top  + 'px';
+  }
+  var ox = 0, oy = 0;
+  drag.addEventListener('mousedown', function(e) {
     e.preventDefault();
-    const r = tb.getBoundingClientRect();
+    var r = tb.getBoundingClientRect();
     ox = e.clientX - r.left;
     oy = e.clientY - r.top;
     drag.style.cursor = 'grabbing';
@@ -370,8 +394,8 @@ let isEditing = false;
     document.addEventListener('mouseup',   onUp);
   });
   function onMove(e) {
-    const left = Math.max(0, Math.min(e.clientX - ox, window.innerWidth  - tb.offsetWidth));
-    const top  = Math.max(0, Math.min(e.clientY - oy, window.innerHeight - tb.offsetHeight));
+    var left = Math.max(0, Math.min(e.clientX - ox, window.innerWidth  - tb.offsetWidth));
+    var top  = Math.max(0, Math.min(e.clientY - oy, window.innerHeight - tb.offsetHeight));
     tb.style.right = 'auto';
     tb.style.left  = left + 'px';
     tb.style.top   = top  + 'px';
@@ -387,84 +411,54 @@ let isEditing = false;
   }
 })();
 
-function getToken() {
-  let t = localStorage.getItem('github_gist_token');
-  if (!t) {
-    t = prompt('請輸入 GitHub Gist Token（僅需輸入一次，儲存於瀏覽器）：');
-    if (t) localStorage.setItem('github_gist_token', t.trim());
-  }
-  return t ? t.trim() : null;
-}
-
 function toggleEdit() {
   isEditing = !isEditing;
-  document.getElementById('main-content').contentEditable = isEditing;
-  document.getElementById('btn-edit').textContent   = isEditing ? '🔒 結束編輯' : '✏️ 編輯';
+  var mc = document.getElementById('main-content');
+  mc.contentEditable = isEditing;
+  if (isEditing) {
+    mc.style.outline = '2px dashed #f39c12';
+    mc.style.minHeight = '100px';
+  } else {
+    mc.style.outline = 'none';
+  }
+  document.getElementById('btn-edit').textContent      = isEditing ? '🔒 結束編輯' : '✏️ 編輯';
   document.getElementById('btn-edit').style.background = isEditing ? '#e74c3c' : '#2980b9';
-  document.getElementById('btn-save').disabled   = !isEditing;
-  document.getElementById('btn-deploy').disabled = !isEditing;
-  document.getElementById('status-text').textContent = isEditing ? '📝 編輯中…' : '';
+  document.getElementById('btn-save').disabled         = !isEditing;
+  document.getElementById('btn-deploy').disabled       = !isEditing;
+  document.getElementById('status-text').textContent   = isEditing ? '📝 編輯中…' : '';
 }
 
 function saveLocal() {
-  const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-  const a = document.createElement('a');
+  var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  var a = document.createElement('a');
   a.href = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);
-  a.download = currentGistFile || 'document.html';
+  a.download = 'fire-drill-plan.html';
   a.click();
   document.getElementById('status-text').textContent = '💾 已下載';
 }
 
-async function deployGist() {
-  const token = getToken();
-  if (!token) return;
-  const html     = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-  const fileName = currentGistFile;
-  const body     = JSON.stringify({ files: { [fileName]: { content: html } } });
-  const status   = document.getElementById('status-text');
-  status.textContent = '⏳ 發布中…';
-  try {
-    const method  = currentGistId ? 'PATCH' : 'POST';
-    const path    = currentGistId ? `/gists/${currentGistId}` : '/gists';
-    const payload = currentGistId
-      ? body
-      : JSON.stringify({ description: fileName, public: false, files: { [fileName]: { content: html } } });
-    const resp = await fetch('https://api.github.com' + path, {
-      method,
-      headers: {
-        'Authorization': 'token ' + token,
-        'Content-Type': 'application/json',
-        'Accept': 'application/vnd.github.v3+json'
-      },
-      body: payload
-    });
-    if (!resp.ok) {
-      const err = await resp.text();
-      status.textContent = '❌ 失敗 ' + resp.status;
-      console.error(err);
-      if (resp.status === 401) {
-        localStorage.removeItem('github_gist_token');
-        alert('Token 無效，已清除，請重新輸入。');
-      }
-      return;
-    }
-    const data = await resp.json();
-    if (!currentGistId) {
-      currentGistId = data.id;
-      localStorage.setItem('gist_id', currentGistId);
-    }
-    const sha      = data.history[0].version;
-    const freshUrl = `https://gist.githack.com/${data.owner.login}/${currentGistId}/raw/${sha}/${fileName}`;
+// ── 儲存並發布到 Firebase（不需要 Token）──
+function deployGist() {
+  var mc     = document.getElementById('main-content');
+  var status = document.getElementById('status-text');
+  var btn    = document.getElementById('btn-deploy');
+  var html   = mc.innerHTML;
+  status.textContent = '⏳ 儲存中…';
+  btn.disabled = true;
+  skipNextDbUpdate = true;
+  dbRef.set(html).then(function() {
+    status.textContent = '✅ 已儲存並發布！';
+    btn.disabled = false;
+    // 顯示頁面連結
     document.getElementById('share-link').style.display = 'block';
-    document.getElementById('share-url').href        = freshUrl;
-    document.getElementById('share-url').textContent = '雲端連結 →';
-    navigator.clipboard.writeText(freshUrl).catch(()=>{});
-    status.textContent = '✅ 已發布！3 秒後跳轉…';
-    setTimeout(() => { window.location.href = freshUrl; }, 3000);
-  } catch(e) {
-    status.textContent = '❌ 網路錯誤';
+    document.getElementById('share-url').href = 'https://cchlu-netizen.github.io/fire-drill-plan/';
+    document.getElementById('share-url').textContent = '查看頁面 →';
+    setTimeout(function() { status.textContent = ''; }, 3000);
+  }).catch(function(e) {
+    status.textContent = '❌ 儲存失敗：' + e.message;
+    btn.disabled = false;
     console.error(e);
-  }
+  });
 }
 </script>
 
